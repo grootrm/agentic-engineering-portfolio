@@ -10,8 +10,8 @@ data throughout.
 ## Workflow
 
 - `dev` is the working branch; `main` tracks it via direct merge (no PR requirement).
-- CI (`.github/workflows/ci.yml`) runs each project's `pytest` suite in a
-  fresh environment on every push/PR to `main` or `dev`.
+- CI (`.github/workflows/ci.yml`) runs each Python project's `pytest` suite and the TypeScript
+  project's `npm test` in a fresh environment on every push/PR to `main` or `dev`.
 
 ## Projects
 
@@ -54,9 +54,18 @@ data throughout.
   registers the handlers as real MCP tools over stdio. 22 tests across
   the catalog and all three tool handlers.
 
+- [`coding-agent-pipeline/`](coding-agent-pipeline/) -- a deterministic
+  Planner -> Executor -> Validator -> Critic loop that drives a typed
+  `GoalSpec` (objective, acceptance criteria, constraints, attempt
+  budget) to completion or escalation, demonstrated end-to-end on a
+  synthetic layered-JSON-config-merge target with a CLI runner. Built
+  test-first in TypeScript (strict mode, Vitest); 59 tests across the
+  planner, executor, validator, critic, orchestrator, and the merge
+  target itself.
+
 ## Status
 
-All five projects are demo-complete: each has a wired-up synthetic
+All six projects are demo-complete: each has a wired-up synthetic
 dataset or pipeline, a CLI entry point that runs it and prints readable
 output, a project README (task, what it demonstrates, how to run it, test
 count), and a passing test suite exercised by CI.

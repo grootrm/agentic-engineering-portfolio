@@ -9,8 +9,7 @@ data throughout.
 
 ## Workflow
 
-- `main` is protected -- changes land via pull request only.
-- `dev` is the working branch.
+- `dev` is the working branch; `main` tracks it via direct merge (no PR requirement).
 - CI (`.github/workflows/ci.yml`) runs each project's `pytest` suite in a
   fresh environment on every push/PR to `main` or `dev`.
 

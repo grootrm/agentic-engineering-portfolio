@@ -137,7 +137,7 @@ def build_pipeline(
         seed: RNG seed for reproducible synthetic ride generation.
         ride_count: number of synthetic ride records to generate.
         fail_first_n_weather_calls: how many times the (simulated) weather
-            enrichment call should fail before succeeding — lets the demo
+            enrichment call should fail before succeeding -- lets the demo
             and tests exercise retry-with-backoff on demand.
         weather_max_retries: retry budget for the weather enrichment task.
         weather_backoff_seconds: base backoff delay for that task.

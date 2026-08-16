@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "self-improving-agent"
+version = "0.1.0"
+description = "A small propose -> test -> keep loop: a rule-based proposer mutates candidate implementations at the AST level, each candidate is scored against a fixed pytest suite, and only variants that improve on their parent enter a lineage-tracked archive."
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

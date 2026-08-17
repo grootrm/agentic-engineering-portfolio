@@ -1,0 +1,18 @@
+{
+  "name": "coding-agent-pipeline",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A deterministic Planner -> Executor -> Validator -> Critic loop that drives a typed GoalSpec to completion or escalation.",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "demo": "tsx src/cli.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.5",
+    "tsx": "^4.19.2"
+  }
+}
